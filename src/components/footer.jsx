@@ -18,10 +18,12 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-2">Contact</h3>
           <ul className="space-y-1 text-gray-300">
-            <li>123 Film Street</li>
-            <li>Los Angeles, CA 90028</li>
-            <li>info@cinematic.com</li>
-            <li>(213) 555-0123</li>
+            <li>WeWork NESCO IT Park,10th Floor,</li>
+            <li>Building 4,Western Express Highway,</li>
+            <li>Goregoan(East),Mumbai,Maharashtra</li>
+            <li>400063</li>
+            <li>contact@melofilms.co.in</li>
+            <li>+91 900 477 9170</li>
           </ul>
         </div>
 
