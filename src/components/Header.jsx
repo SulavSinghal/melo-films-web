@@ -1,83 +1,142 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
+// Step 1: Import the social media icons you need
+import { FaBars, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+// Data for navigation links
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/aboutUs' },
+  { name: 'Films', path: '/films' },
+  { name: 'News', path: '/news' },
+  { name: 'Contact', path: '/contact' },
+];
+
+// Step 2: Create a data structure for social media links
+const socialLinks = [
+  { name: 'Facebook', url: 'https://facebook.com', icon: <FaFacebookF /> },
+  { name: 'Twitter', url: 'https://twitter.com', icon: <FaTwitter /> },
+  { name: 'Instagram', url: 'https://instagram.com', icon: <FaInstagram /> },
+];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
 
+  // Close mobile menu on route change
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    setIsLoggedIn(!!token);
+    setMenuOpen(false);
   }, [location]);
 
   return (
     <>
       <nav className="bg-black text-white px-6 py-4 flex items-center justify-between relative z-50">
-        {/* Logo */}
-        <Link
-          to="/"
-          className="text-3xl font-bold text-yellow-500"
-          style={{ fontFamily: "'Playfair Display', serif" }}
-        >
-          MELO
-        </Link>
-
-        {/* Hamburger (Mobile) */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white text-2xl focus:outline-none"
-            aria-label="Toggle Menu"
-          >
-            <FaBars />
-          </button>
-        </div>
-
-        {/* Navigation Links */}
-        <ul
-          className={`${
-            menuOpen ? 'flex' : 'hidden'
-          } md:flex md:space-x-8 md:items-center text-xl flex-col md:flex-row absolute md:static top-16 left-0 w-full md:w-auto bg-black md:bg-transparent px-6 md:px-0 py-4 md:py-0 z-50`}
-        >
-          <li>
-            <Link to="/" className="block py-2 md:py-0 hover:text-yellow-500">Home</Link>
-          </li>
-          <li>
-            <Link to="/about" className="block py-2 md:py-0 hover:text-yellow-500">About</Link>
-          </li>
-          <li>
-            <Link to="/films" className="block py-2 md:py-0 hover:text-yellow-500">Films</Link>
-          </li>
-          <li>
-            <Link to="/news" className="block py-2 md:py-0 hover:text-yellow-500">News</Link>
-          </li>
-          <li>
-            <Link to="/contact" className="block py-2 md:py-0 hover:text-yellow-500">Contact</Link>
-          </li>
-
-          {/* Mobile Login/Dashboard Button */}
-          <li className="md:hidden mt-2">
-            <Link
-              to={isLoggedIn ? "/admin/dashboard" : "/admin/login"}
-              className="bg-yellow-500 text-black px-6 py-2 rounded-md font-semibold hover:bg-yellow-400 transition block text-center"
-            >
-              {isLoggedIn ? "Dashboard" : "Login"}
-            </Link>
-          </li>
-        </ul>
-
-        {/* Desktop Login/Dashboard Button */}
-        <div className="hidden md:block">
+        {/* Left Side: Logo */}
+        <div className="flex-1">
           <Link
-            to={isLoggedIn ? "/admin/dashboard" : "/admin/login"}
-            className="bg-yellow-500 text-black px-4 py-2 rounded-md font-semibold hover:bg-yellow-400 transition"
+            to="/"
+            className="text-3xl font-bold text-yellow-500"
+            style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            {isLoggedIn ? "Dashboard" : "Login"}
+            MELO
           </Link>
         </div>
+
+        {/* Center: Desktop Navigation Links */}
+        <ul className="hidden md:flex md:space-x-8 text-xl">
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <Link
+                to={link.path}
+                className={`block py-2 md:py-0 ${
+                  location.pathname === link.path
+                    ? 'text-yellow-500' // Active link style
+                    : 'hover:text-yellow-500 transition-colors' // Hover style
+                }`}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Right Side: Social Icons (Desktop) & Hamburger (Mobile) */}
+        <div className="flex-1 flex justify-end items-center">
+          {/* Social Icons for Desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Follow us on ${link.name}`}
+                className="hover:text-yellow-500 transition-colors"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+
+          {/* Hamburger Icon for Mobile */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-white text-2xl focus:outline-none"
+              aria-label="Toggle Menu"
+              aria-controls="mobile-menu"
+              aria-expanded={menuOpen}
+            >
+              <FaBars />
+            </button>
+          </div>
+        </div>
       </nav>
+
+      {/* Mobile Menu (Dropdown) */}
+      {menuOpen && (
+        <div
+          id="mobile-menu"
+          className="md:hidden flex flex-col items-center bg-black text-white text-xl py-8 space-y-6"
+        >
+          {/* Mobile Navigation Links */}
+          <ul className="flex flex-col items-center space-y-6">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link
+                  to={link.path}
+                  className={`block ${
+                    location.pathname === link.path
+                      ? 'text-yellow-500'
+                      : 'hover:text-yellow-500'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Divider */}
+          <hr className="w-1/2 border-gray-700 my-4" />
+
+          {/* Mobile Social Links */}
+          <div className="flex items-center space-x-6">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Follow us on ${link.name}`}
+                className="hover:text-yellow-500 transition-colors text-2xl"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 };

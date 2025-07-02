@@ -77,7 +77,7 @@ const FilmsPage = () => {
             <option value="all">All</option>
             <option value="upcoming">Upcoming</option>
             <option value="production">Production</option>
-            <option value="past">Past</option>
+            <option value="past">Original</option>
           </select>
         </div>
 
