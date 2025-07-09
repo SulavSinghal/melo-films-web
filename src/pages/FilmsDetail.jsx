@@ -9,7 +9,7 @@ const FilmDetail = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/films/${id}`)
+    fetch(`${API_BASE}/films/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('Film not found');
         return res.json();

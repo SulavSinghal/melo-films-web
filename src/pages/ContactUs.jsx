@@ -26,7 +26,7 @@ export default function ContactPage() {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    axios.get(`${API_BASE}/api/contact-info`)
+    axios.get(`${API_BASE}/contact-info`)
       .then(res => setContactInfo(res.data))
       .catch(() => setContactInfo(null));
   }, []);
@@ -34,7 +34,7 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_BASE}/api/contact`, formData);
+      await axios.post(`${API_BASE}/contact`, formData);
       setSuccessMessage('Message sent successfully!');
       setErrorMessage('');
       setFormData({ name: '', email: '', inquiryType: '', message: '' });

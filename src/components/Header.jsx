@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 // Step 1: Import the social media icons you need
-import { FaBars, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaBars, FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 // Data for navigation links
 const navLinks = [
@@ -14,9 +14,9 @@ const navLinks = [
 
 // Step 2: Create a data structure for social media links
 const socialLinks = [
-  { name: 'Facebook', url: 'https://facebook.com', icon: <FaFacebookF /> },
-  { name: 'Twitter', url: 'https://twitter.com', icon: <FaTwitter /> },
-  { name: 'Instagram', url: 'https://instagram.com', icon: <FaInstagram /> },
+  { name: 'Facebook', url: 'https://share.google/COhDtzpYdFwOAeYhO', icon: <FaFacebookF /> },
+  {name: 'Youtube', url:"",icon: <FaYoutube />},
+  { name: 'Instagram', url: 'https://www.instagram.com/melofilms.co.in?igsh=eXdoOGRzeXFjbjZ0', icon: <FaInstagram /> },
 ];
 
 const Header = () => {
@@ -30,17 +30,18 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-black text-white px-6 py-4 flex items-center justify-between relative z-50">
+      <nav className="bg-black text-white  py-4 flex items-center justify-between relative z-50">
         {/* Left Side: Logo */}
         <div className="flex-1">
-          <Link
-            to="/"
-            className="text-3xl font-bold text-yellow-500"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            MELO
-          </Link>
-        </div>
+  <Link to="/">
+    <img
+      src="/assets/images/Melo-new-logo.png" // Replace with your actual logo path
+      alt="Melo Films Logo"
+      className="h-10" // Adjust height as needed
+    />
+  </Link>
+</div>
+
 
         {/* Center: Desktop Navigation Links */}
         <ul className="hidden md:flex md:space-x-8 text-xl">

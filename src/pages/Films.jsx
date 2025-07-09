@@ -12,7 +12,7 @@ const FilmsPage = () => {
   const filmsPerPage = 6;
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/films`)
+    fetch(`${API_BASE}/films`)
       .then((res) => res.json())
       .then((data) => {
         setFilms(data);
@@ -77,7 +77,7 @@ const FilmsPage = () => {
             <option value="all">All</option>
             <option value="upcoming">Upcoming</option>
             <option value="production">Production</option>
-            <option value="past">Original</option>
+            <option value="original">Original</option>
           </select>
         </div>
 
@@ -102,19 +102,19 @@ const FilmsPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
                 {/* Tag */}
-                {film.film_type && (
-                  <span className="absolute top-2 right-2 bg-yellow-500 text-black text-xs px-2 py-1">
-                    {film.film_type.toUpperCase()}
-                  </span>
-                )}
+                {film.film_type?.toLowerCase() === "original" && (
+  <span className="absolute top-2 right-2 bg-yellow-500 text-black text-xs px-2 py-1 rounded">
+    {film.film_type.toUpperCase()}
+  </span>
+)}
 
                 {/* More Button */}
-                <Link
+                {/* <Link
                   to={`/films/${film._id}`}
                   className="absolute bottom-4 left-1/2 transform -translate-x-1/2 translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-yellow-500 text-black px-4 py-2 rounded"
                 >
                   More
-                </Link>
+                </Link> */}
               </div>
             );
           })}

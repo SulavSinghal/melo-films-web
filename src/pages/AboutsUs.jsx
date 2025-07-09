@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import OurStory from '../components/About/OurStory';
@@ -15,7 +15,7 @@ export default function AboutUs() {
   const API_BASE = import.meta.env.VITE_API_BASE;
 
   useEffect(() => {
-    axios.get(`${API_BASE}/api/aboutUs`)
+    axios.get(`${API_BASE}/aboutUs`)
       .then(res => {
         console.log('About Us Data:', res.data);
         setAboutData(res.data);

@@ -14,12 +14,12 @@ export default function OurStory({ content }) {
           </span>
 
           <h2 className="text-3xl sm:text-4xl font-bold mt-4">
-            {content.heading}
+            {content.heading} 
           </h2>
 
           <p className="text-gray-300 mt-6 leading-relaxed">
             {content.paragraph1}
-          </p>
+          </p> 
 
           <p className="text-gray-300 mt-4 leading-relaxed">
             {content.paragraph2}

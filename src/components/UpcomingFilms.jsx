@@ -25,14 +25,14 @@ export default function UpcomingSection() {
 
   // Fetch films and CTA content
   useEffect(() => {
-    fetch(`${API_BASE}/api/films`)
+    fetch(`${API_BASE}/films`)
       .then((res) => res.json())
       .then((data) => {
         const upcoming = data.filter((f) => f.film_type === 'upcoming');
         setFilms(upcoming);
       });
 
-    fetch(`${API_BASE}/api/opportunity/latest`)
+    fetch(`${API_BASE}/opportunities/latest`)
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -47,7 +47,7 @@ export default function UpcomingSection() {
   }, []);
 
   return (
-    <section className="bg-black text-white py-16 px-4 sm:px-12">
+    <section className="bg-black text-white py-10 px-4 sm:px-12">
       <h2
         className="text-3xl font-bold mb-10 text-center md:text-left"
         style={{ fontFamily: "'Playfair Display', serif" }}
@@ -60,11 +60,11 @@ export default function UpcomingSection() {
         {films.length > 0 && (
           <div
             ref={sliderRef}
-            className="keen-slider h-[450px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in"
+            className="keen-slider h-[300px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in"
           >
             {films.map((film) => {
               const cleanBannerPath = film.film_banner.replace(/\\/g, '/');
-              const imageUrl = `${API_BASE}/${cleanBannerPath}`;
+              const imageUrl = `${API_BASE}${cleanBannerPath}`;
               return (
                 <div
                   key={film._id}
@@ -93,13 +93,13 @@ export default function UpcomingSection() {
                     </div>
                   </div>
                 </div>
-              );
+              ); 
             })}
           </div>
         )}
 
         {/* RIGHT: CTA Opportunity Card */}
-<div className="h-[450px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in">
+<div className="h-[300px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in">
   {cta ? (
     <a
       href={cta.link || '/'} // fallback route

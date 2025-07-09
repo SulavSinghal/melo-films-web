@@ -1,69 +1,54 @@
-// import React from 'react';
-
-// const HeroSection = () => {
-//   return (
-//     <section
-//       className="relative bg-cover bg-center bg-no-repeat text-white px-8 py-24"
-//       style={{ backgroundImage: "url('./assets/images/awards.png')"}}
-//     >
-//       {/* Overlay */}
-//       {/* <div className="absolute inset-0 bg-black bg-opacity-60"></div> */}
-
-//       {/* Content */}
-//       <div className="relative z-10 max-w-3xl">
-//         <h1
-//           className="text-4xl md:text-6xl font-bold mb-4"
-//           style={{ fontFamily: "'Playfair Display', serif" }}
-//         >
-//           The Forgotten Echo
-//         </h1>
-//         <p
-//           className="text-lg text-yellow-400 font-semibold mb-2"
-//           style={{ fontFamily: "'Montserrat', sans-serif" }}
-//         >
-//           Sanjana Wadkar
-//         </p>
-//         <p
-//           className="text-md md:text-lg mb-6 leading-relaxed"
-//           style={{ fontFamily: "'Montserrat', sans-serif" }}
-//         >
-//           A haunting journey through memory and time that challenges our <br /> perception of reality.
-//         </p>
-//         <div className="flex flex-wrap gap-4">
-//           <a
-//             href="#"
-//             className="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition"
-//           >
-//             ▶ Watch Trailer
-//           </a>
-//           <a
-//             href="#"
-//             className="border border-yellow-400 text-yellow-400 font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
-//           >
-//             Learn More
-//           </a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default HeroSection;
 import React, { useEffect, useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 
 const API_BASE = import.meta.env.VITE_API_BASE;
 
+// Autoplay plugin for Keen Slider
+function autoplay(run = true, interval = 3000) {
+  return (slider) => {
+    let timeout;
+    let mouseOver = false;
+
+    const clearNextTimeout = () => clearTimeout(timeout);
+
+    const nextTimeout = () => {
+      clearTimeout(timeout);
+      if (mouseOver || !run) return;
+      timeout = setTimeout(() => slider.next(), interval);
+    };
+
+    slider.on('created', () => {
+      slider.container.addEventListener('mouseover', () => {
+        mouseOver = true;
+        clearNextTimeout();
+      });
+      slider.container.addEventListener('mouseout', () => {
+        mouseOver = false;
+        nextTimeout();
+      });
+      nextTimeout();
+    });
+
+    slider.on('dragStarted', clearNextTimeout);
+    slider.on('animationEnded', nextTimeout);
+    slider.on('updated', nextTimeout);
+  };
+}
+
 const HeroSection = () => {
   const [originals, setOriginals] = useState([]);
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: true,
-    slides: { perView: 1 },
-  });
+
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      loop: true,
+      slides: { perView: 1 },
+    },
+    [autoplay()] // Add autoplay plugin here
+  );
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/films`)
+    fetch(`${API_BASE}/films`)
       .then((res) => res.json())
       .then((data) => {
         const originalFilms = data.filter((film) => film.film_type === 'original');
@@ -73,19 +58,19 @@ const HeroSection = () => {
   }, []);
 
   const goToPrev = () => {
-    if (instanceRef.current && instanceRef.current.track && instanceRef.current.track.details) {
+    if (instanceRef.current?.track?.details) {
       instanceRef.current.prev();
     }
   };
 
   const goToNext = () => {
-    if (instanceRef.current && instanceRef.current.track && instanceRef.current.track.details) {
+    if (instanceRef.current?.track?.details) {
       instanceRef.current.next();
     }
   };
 
   return (
-    <section className="relative px-0 md:px-8 py-20 text-white">
+    <section className="w-screen relative py-3 text-white">
       {originals.length === 0 ? (
         <div className="text-white text-center text-xl">Loading...</div>
       ) : (
@@ -96,46 +81,56 @@ const HeroSection = () => {
               const imageUrl = `${API_BASE}/${cleanBannerPath}`;
 
               return (
-                <div
-                  key={film._id}
-                  className="keen-slider__slide bg-cover bg-center bg-no-repeat relative"
-                  style={{
-                    backgroundImage: `url("${imageUrl}")`,
-                    height: '500px',
-                    width: '100%',
-                  }}
-                >
-                  <div className="relative z-10 max-w-3xl px-8 py-24">
-                    <h1
-                      className="text-4xl md:text-6xl font-bold mb-4"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      {film.film_name}
-                    </h1>
-                 
-                    <p
-                      className="text-md md:text-lg mb-6 leading-relaxed"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      {film.film_description}
-                    </p>
-                    <div className="flex flex-wrap gap-4">
-                      {/* <a
-                        href="#"
-                        className="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-300 transition"
-                      >
-                        ▶ Watch Trailer
-                      </a>
-                      <a
-                        href="#"
-                        className="border border-yellow-400 text-yellow-400 font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition"
-                      >
-                        Learn More
-                      </a> */}
-                    </div>
-                  </div>
-                </div>
-              );
+  <div
+    key={film._id}
+    className="keen-slider__slide bg-cover bg-center bg-no-repeat relative"
+    style={{
+      backgroundImage: `url("${imageUrl}")`,
+      height: '500px',
+      width: '100%',
+    }}
+  >
+    <div className="relative z-10 max-w-3xl px-8 py-24 ml-10 mt-20">
+      <h1
+        className="text-4xl md:text-6xl font-bold mb-4"
+        style={{ fontFamily: "'Playfair Display', serif" }}
+      >
+        {film.film_name}
+      </h1>
+      <p
+        className="text-md md:text-lg mb-6 leading-relaxed"
+        style={{ fontFamily: "'Montserrat', sans-serif" }}
+      >
+       By {film.director_name}
+      </p>
+      <p
+        className="text-md md:text-lg mb-6 leading-relaxed"
+        style={{ fontFamily: "'Montserrat', sans-serif" }}
+      >
+        {film.film_description}
+      </p>
+
+      <div className="flex gap-4">
+        <a
+          href={film.trailer_url || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-yellow-500 hover:bg-red-700 text-black font-semibold py-2 px-4 transition duration-300"
+        >
+          Watch Trailer
+        </a>
+       <a
+  href={'#'}
+  className="border-2 border-yellow-500 text-yellow-500 font-semibold py-2 px-4 bg-transparent hover:bg-gray-100 transition duration-300"
+>
+  More
+</a>
+
+      </div>
+    </div>
+  </div>
+);
+
             })}
           </div>
 
@@ -150,7 +145,7 @@ const HeroSection = () => {
               </button>
               <button
                 onClick={goToNext}
-                className="text-white  bg-opacity-50 text-4xl hover:bg-opacity-70 rounded-full p-2"
+                className="text-white bg-opacity-50 text-4xl hover:bg-opacity-70 rounded-full p-2"
               >
                 ›
               </button>

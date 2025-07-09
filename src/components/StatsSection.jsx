@@ -2,10 +2,11 @@ import React from 'react';
 
 const StatsSection = () => {
   const stats = [
-    { number: '25+', label: 'Awards Won' },
-    { number: '50+', label: 'Films Produced' },
-    { number: '15', label: 'Years of Excellence' },
-    { number: '1M+', label: 'Viewers Worldwide' },
+    { number: '100+', label: 'Commissioned Productions' },
+    { number: '50+', label: 'Clients' },
+    { number: '06', label: 'Originals' },
+    { number: '09', label: 'Awards' },
+    { number: '35', label: 'Selections and Nominations' }
   ];
 
   return (
@@ -17,9 +18,9 @@ const StatsSection = () => {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Stats */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center justify-items-center text-white">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-center text-white">
         {stats.map((stat, index) => (
-          <div key={index}>
+          <div key={index} className="min-w-[150px]">
             <div className="text-3xl font-bold text-yellow-500 font-serif">{stat.number}</div>
             <div className="mt-1 text-white">{stat.label}</div>
           </div>
