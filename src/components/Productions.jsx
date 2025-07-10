@@ -24,7 +24,7 @@ return (
       Our Productions
     </h2>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {productions.slice(0, 6).map((film) => {
         const cleanPath = film.film_banner.replace(/\\/g, '/');
         const imageUrl = `${API_BASE}/${cleanPath}`;

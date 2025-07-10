@@ -98,13 +98,13 @@ const HeroSection = () => {
         {film.film_name}
       </h1>
       <p
-        className="text-md md:text-lg mb-6 leading-relaxed"
+        className="text-md md:text-2xl mb-4 leading-relaxed text-yellow-500"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
        By {film.director_name}
       </p>
       <p
-        className="text-md md:text-lg mb-6 leading-relaxed"
+        className="text-md md:text-lg mb-6 leading-relaxed max-w-md"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
         {film.film_description}
