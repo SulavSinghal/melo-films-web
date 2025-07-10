@@ -32,12 +32,12 @@ return (
         return (
           <div
             key={film._id}
-            className="overflow-hidden rounded shadow-md  flex justify-center items-center"
+            className="overflow-hidden shadow-md  flex justify-center items-center"
           >
             <img
               src={imageUrl}
               alt={film.film_name}
-              className="w-full h-[450px] object-contain"
+              className="w-full h-full object-contain"
             />
           </div>
         );
