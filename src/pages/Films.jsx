@@ -50,16 +50,24 @@ const FilmsPage = () => {
     <>
       {/* Hero Section */}
       <section className="relative bg-cover bg-center bg-no-repeat text-white px-8 py-24 bg-[#0f0f0f]">
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div className="relative z-10 w-full max-w-none text-left">
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4 ml-10"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Explore Our Productions
-          </h1>
-        </div>
-      </section>
+  <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div className="relative z-10 w-full max-w-4xl text-left">
+    <h1
+      className="text-4xl md:text-5xl font-bold mb-12"
+      style={{ fontFamily: "'Playfair Display', serif" }}
+    >
+      Explore Our Productions
+    </h1>
+    <p
+      className="text-md md:text-lg mb-6 leading-relaxed"
+      style={{ fontFamily: "'Montserrat', sans-serif" }}
+    >
+      Explore our diverse portfolio of award-winning films, from thought-provoking documentaries to
+      visually stunning feature films that push the boundaries of storytelling.
+    </p>
+  </div>
+</section>
+
 
       {/* Films Grid with Filter */}
       <section className="bg-black text-white min-h-screen px-6 py-10">
