@@ -12,7 +12,7 @@ const StatsSection = () => {
   return (
     <div
       className="relative bg-cover bg-center py-10"
-      style={{ backgroundImage: "url('/melo_films/assets/images/awards.png')" }}
+      style={{ backgroundImage: "url('/assets/images/Melo-new-logo.png')" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
@@ -21,7 +21,7 @@ const StatsSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-8 text-center text-white">
         {stats.map((stat, index) => (
           <div key={index} className="min-w-[150px]">
-            <div className="text-3xl font-bold text-yellow-500 font-serif">{stat.number}</div>
+            <div className="text-3xl font-bold text-[#D4AF37] font-serif">{stat.number}</div>
             <div className="mt-1 text-white">{stat.label}</div>
           </div>
         ))}

@@ -90,18 +90,18 @@ const HeroSection = () => {
       width: '100%',
     }}
   >
-    <div className="relative z-10 max-w-3xl px-8 py-24 ml-10 mt-20">
+    <div className="relative z-10 max-w-3xl px-8 py-24 ml-10 mt-15">
       <h1
-        className="text-4xl md:text-6xl font-bold mb-4"
-        style={{ fontFamily: "'Playfair Display', serif" }}
+        className="text-4xl md:text-5xl mb-4"
+        style={{ fontFamily: 'Playfair Display' }}
       >
         {film.film_name}
       </h1>
       <p
-        className="text-md md:text-2xl mb-4 leading-relaxed text-yellow-500"
-        style={{ fontFamily: "'Montserrat', sans-serif" }}
+        className="text-md md:text-2xl mb-4 leading-relaxed text-[#D4AF37]"
+        style={{ fontFamily: "Montserrat" }}
       >
-       By {film.director_name}
+      {film.director_name}
       </p>
       <p
         className="text-md md:text-lg mb-6 leading-relaxed max-w-md"
@@ -111,19 +111,29 @@ const HeroSection = () => {
       </p>
 
       <div className="flex gap-4">
-        <a
-          href={film.trailer_url || '#'}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-yellow-500 hover:bg-red-700 text-black font-semibold py-2 px-4 transition duration-300"
-        >
-          Watch Trailer
-        </a>
+     <a
+  href={film.trailer_url || '#'}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-[#D4AF37] hover:bg-red-700 text-black font-semibold py-2 px-4 transition duration-300 inline-flex items-center gap-2"
+>
+  {/* Simple black play icon */}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-5 h-5"
+    viewBox="0 0 20 20"
+    fill="black"
+  >
+    <polygon points="6,4 16,10 6,16" />
+  </svg>
+  Watch Trailer
+</a>
+
        <a
   href={'#'}
-  className="border-2 border-yellow-500 text-yellow-500 font-semibold py-2 px-4 bg-transparent hover:bg-gray-100 transition duration-300"
+  className="border-2 border-white font-semibold py-2 px-4 bg-transparent hover:bg-yellow-500 transition duration-300"
 >
-  More
+More
 </a>
 
       </div>

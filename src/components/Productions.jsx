@@ -18,13 +18,13 @@ const Productions = () => {
 return (
   <div className="px-6 py-10 bg-black text-white">
     <h2
-      className="ml-6 text-3xl font-semibold mb-6"
+      className="ml-6 text-4xl font-semibold mb-10"
       style={{ fontFamily: "'Playfair Display', serif" }}
     >
       Our Productions
     </h2>
 
-    <div className="px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       {productions.slice(0, 6).map((film) => {
         const cleanPath = film.film_banner.replace(/\\/g, '/');
         const imageUrl = `${API_BASE}/${cleanPath}`;
@@ -47,7 +47,7 @@ return (
     <div className="mt-8 text-center">
       <a
         href="/films"
-        className="inline-block border border-yellow-500 text-yellow-500 px-4 py-2 rounded hover:bg-yellow-500 hover:text-black transition duration-200"
+        className="inline-block border border-[#D4AF37] text-[#D4AF37] px-4 py-2  hover:[#D4AF37] hover:text-black transition duration-200"
       >
         View All Films
       </a>

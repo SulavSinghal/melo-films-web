@@ -30,14 +30,14 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-black text-white  py-4 flex items-center justify-between relative z-50">
+      <nav className="bg-black text-white px-10 py-2 flex items-center justify-between relative z-50">
         {/* Left Side: Logo */}
         <div className="flex-1">
   <Link to="/">
     <img
       src="/assets/images/Melo-new-logo.png" // Replace with your actual logo path
       alt="Melo Films Logo"
-      className="h-10" // Adjust height as needed
+      className="h-12" // Adjust height as needed
     />
   </Link>
 </div>
@@ -51,8 +51,8 @@ const Header = () => {
                 to={link.path}
                 className={`block py-2 md:py-0 ${
                   location.pathname === link.path
-                    ? 'text-yellow-500' // Active link style
-                    : 'hover:text-yellow-500 transition-colors' // Hover style
+                    ? 'text-[#D4AF37]'
+                    : 'hover:text-[#D4AF37] transition-colors' // Hover style
                 }`}
               >
                 {link.name}
@@ -72,7 +72,7 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Follow us on ${link.name}`}
-                className="hover:text-yellow-500 transition-colors"
+                className="hover:text-[#D4AF37] transition-colors"
               >
                 {link.icon}
               </a>
@@ -108,8 +108,8 @@ const Header = () => {
                   to={link.path}
                   className={`block ${
                     location.pathname === link.path
-                      ? 'text-yellow-500'
-                      : 'hover:text-yellow-500'
+                      ? 'text-[#D4AF37]'
+                      : 'hover:text-[#D4AF37]'
                   }`}
                 >
                   {link.name}
@@ -130,7 +130,7 @@ const Header = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Follow us on ${link.name}`}
-                className="hover:text-yellow-500 transition-colors text-2xl"
+                className="hover:text-[#D4AF37] transition-colors text-2xl"
               >
                 {link.icon}
               </a>

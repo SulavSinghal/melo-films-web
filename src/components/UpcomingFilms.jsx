@@ -49,7 +49,7 @@ export default function UpcomingSection() {
   return (
     <section className="bg-black text-white py-10 px-4 sm:px-12">
       <h2
-        className="text-3xl font-bold mb-10 text-center md:text-left"
+        className="text-4xl font-bold mb-10 text-center md:text-left"
         style={{ fontFamily: "'Playfair Display', serif" }}
       >
         Upcomings
@@ -78,7 +78,7 @@ export default function UpcomingSection() {
                     }}
                   >
                     <div className="w-full h-full  bg-opacity-60 flex flex-col justify-end p-6">
-                      <span className="text-black text-sm font-medium bg-yellow-500 px-2 py-1 inline-block w-fit">
+                      <span className="text-black text-sm font-medium bg-[#D4AF37] px-2 py-1 inline-block w-fit">
                         {film.film_year}
                       </span>
                       <h3
@@ -87,7 +87,7 @@ export default function UpcomingSection() {
                       >
                         {film.film_name}
                       </h3>
-                      <p className="text-sm text-white text-opacity-90">
+                      <p className="text-sm text-white text-opacity-90"  style={{ fontFamily: "'Montserrat', sans-serif" }}>
                         {film.film_description}
                       </p>
                     </div>
@@ -112,7 +112,7 @@ export default function UpcomingSection() {
       }}
     >
       <div className="w-full h-full bg-opacity-60 flex flex-col justify-end p-6">
-        <span className="text-black text-sm font-medium bg-yellow-500 px-2 py-1 inline-block w-fit">
+        <span className="text-black text-sm font-medium bg-[#D4AF37] px-2 py-1 inline-block w-fit">
           Ends on: {new Date(cta.endsAt).toLocaleDateString()}
         </span>
         <h3
@@ -121,7 +121,7 @@ export default function UpcomingSection() {
         >
           {cta.heading}
         </h3>
-        <p className="text-sm text-white text-opacity-90">
+        <p className="text-sm text-white text-opacity-90"  style={{ fontFamily: "'Montserrat', sans-serif" }}>
           {cta.description}
         </p>
       </div>
