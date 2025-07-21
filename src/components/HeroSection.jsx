@@ -92,49 +92,64 @@ const HeroSection = () => {
   >
     <div className="relative z-10 max-w-3xl px-8 py-24 ml-10 mt-15">
       <h1
-        className="text-4xl md:text-5xl mb-4"
+        className="text-4xl md:text-5xl mb-3"
         style={{ fontFamily: 'Playfair Display' }}
       >
         {film.film_name}
       </h1>
       <p
-        className="text-md md:text-2xl mb-4 leading-relaxed text-[#D4AF37]"
+        className="text-md md:text-2xl mb-3 leading-relaxed text-[#D4AF37]"
         style={{ fontFamily: "Montserrat" }}
       >
       {film.director_name}
       </p>
       <p
-        className="text-md md:text-lg mb-6 leading-relaxed max-w-md"
+        className="text-md md:text-lg mb-3 leading-relaxed max-w-prose"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
         {film.film_description}
       </p>
 
-      <div className="flex gap-4">
-     <a
-  href={film.trailer_url || '#'}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="bg-[#D4AF37] hover:bg-red-700 text-black font-semibold py-2 px-4 transition duration-300 inline-flex items-center gap-2"
->
-  {/* Simple black play icon */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-5 h-5"
-    viewBox="0 0 20 20"
-    fill="black"
+<div className="flex flex-row gap-3 w-full max-w-md">
+  <a
+    href={film.trailer_url || '#'}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      bg-[#D4AF37] hover:bg-red-700 text-black 
+      py-2 px-4
+      transition duration-300 
+      inline-flex items-center gap-2
+      w-full sm:w-auto
+      justify-center
+      text-base sm:text-lg
+    "
   >
-    <polygon points="6,4 16,10 6,16" />
-  </svg>
-  Watch Trailer
-</a>
-
-       <a
-  href={'#'}
-  className="border-2 border-white font-semibold py-2 px-4 bg-transparent hover:bg-yellow-500 transition duration-300"
->
-More
-</a>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-5 h-5"
+      viewBox="0 0 20 20"
+      fill="black"
+    >
+      <polygon points="6,4 16,10 6,16" />
+    </svg>
+    Watch Trailer
+  </a>
+  <a
+    href={'#'}
+    className="
+      border-2 border-white 
+      py-2 px-4 
+      bg-transparent 
+      hover:bg-[#D4AF37] hover:text-black 
+      transition duration-300 
+      w-full sm:w-auto
+      text-base sm:text-lg
+      text-white text-center
+    "
+  >
+    More
+  </a>
 
       </div>
     </div>

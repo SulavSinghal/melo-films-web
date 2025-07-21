@@ -47,10 +47,10 @@ export default function UpcomingSection() {
   }, []);
 
   return (
-    <section className="bg-black text-white py-10 px-4 sm:px-12">
+    <section className="bg-black text-white py-6 px-4 sm:px-12">
       <h2
-        className="text-4xl font-bold mb-10 text-center md:text-left"
-        style={{ fontFamily: "'Playfair Display', serif" }}
+        className="text-3xl mb-10 text-center md:text-left"
+        style={{ fontFamily: "Playfair Display" }}
       >
         Upcomings
       </h2>
@@ -60,7 +60,7 @@ export default function UpcomingSection() {
         {films.length > 0 && (
           <div
             ref={sliderRef}
-            className="keen-slider h-[300px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in"
+            className="keen-slider h-[310px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in"
           >
             {films.map((film) => {
               const cleanBannerPath = film.film_banner.replace(/\\/g, '/');
@@ -99,7 +99,7 @@ export default function UpcomingSection() {
         )}
 
         {/* RIGHT: CTA Opportunity Card */}
-<div className="h-[300px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in">
+<div className="h-[310px] overflow-hidden shadow-xl border border-gray-800 animate-fade-in">
   {cta ? (
     <a
       href={cta.link || '/'} // fallback route

@@ -16,10 +16,10 @@ const Productions = () => {
   }, []);
 
 return (
-  <div className="px-6 py-10 bg-black text-white">
+  <div className="px-6 py-6 bg-black text-white">
     <h2
-      className="ml-6 text-4xl font-semibold mb-10"
-      style={{ fontFamily: "'Playfair Display', serif" }}
+      className="ml-6 text-3xl mb-10"
+      style={{ fontFamily: "Playfair Display" }}
     >
       Our Productions
     </h2>
