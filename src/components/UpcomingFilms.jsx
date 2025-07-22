@@ -17,7 +17,7 @@ export default function UpcomingSection() {
       created(slider) {
         setInterval(() => {
           slider.next();
-        }, 2000);
+        }, 5000);
       },
     },
     []

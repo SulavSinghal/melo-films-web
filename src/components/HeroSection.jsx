@@ -5,7 +5,7 @@ import 'keen-slider/keen-slider.min.css';
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 // Autoplay plugin for Keen Slider
-function autoplay(run = true, interval = 3000) {
+function autoplay(run = true, interval = 5000) {
   return (slider) => {
     let timeout;
     let mouseOver = false;
