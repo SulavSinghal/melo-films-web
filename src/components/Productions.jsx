@@ -18,7 +18,7 @@ const Productions = () => {
 return (
   <div className="px-6 py-6 bg-black text-white">
     <h2
-      className="ml-6 text-3xl mb-10"
+      className="ml-6 text-2xl mb-10"
       style={{ fontFamily: "Playfair Display" }}
     >
       Our Productions

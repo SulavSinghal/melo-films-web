@@ -12,7 +12,7 @@ const StatsSection = () => {
   return (
     <div
       className="relative bg-cover bg-center py-10"
-      style={{ backgroundImage: "url('/assets/images/Melo-new-logo.png')" }}
+      style={{ backgroundImage: "url('/asets/images/Melo-new-logo.png')" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>

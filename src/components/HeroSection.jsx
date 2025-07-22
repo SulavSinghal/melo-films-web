@@ -104,7 +104,7 @@ const HeroSection = () => {
       {film.director_name}
       </p>
       <p
-        className="text-md md:text-lg mb-3 leading-relaxed max-w-prose"
+        className="text-sm md:text-md mb-3 leading-relaxed max-w-prose"
         style={{ fontFamily: "'Montserrat', sans-serif" }}
       >
         {film.film_description}
