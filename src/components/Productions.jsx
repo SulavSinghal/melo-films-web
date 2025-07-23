@@ -16,7 +16,7 @@ const Productions = () => {
   }, []);
 
 return (
-  <div className="px-6 py-6 bg-black text-white">
+  <div className="px-10 py-6 bg-[#0A0A0A] text-white">
     <h2
       className="ml-6 text-2xl mb-10"
       style={{ fontFamily: "Playfair Display" }}

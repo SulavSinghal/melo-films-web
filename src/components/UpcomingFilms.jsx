@@ -47,7 +47,7 @@ export default function UpcomingSection() {
   }, []);
 
   return (
-    <section className="bg-black text-white py-6 px-4 sm:px-12">
+    <section className="bg-black text-white py-6 px-16">
       <h2
         className="text-2xl mb-10 text-center md:text-left"
         style={{ fontFamily: "Playfair Display" }}

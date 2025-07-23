@@ -11,7 +11,7 @@ const StatsSection = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center py-10"
+      className="relative bg-cover bg-center py-10 "
       style={{ backgroundImage: "url('/asets/images/Melo-new-logo.png')" }}
     >
       {/* Overlay */}
@@ -22,7 +22,7 @@ const StatsSection = () => {
         {stats.map((stat, index) => (
           <div key={index} className="min-w-[150px]">
             <div className="text-3xl text-[#D4AF37] font-serif">{stat.number}</div>
-          <div style={{ fontFamily: 'Montserrat, sans-serif' }} className="mt-1 text-white">
+          <div style={{ fontFamily: 'Montserrat, sans-serif' }} className="mt-1 text-[#D1D5DB] text-sm">
   {stat.label}
 </div>
 
