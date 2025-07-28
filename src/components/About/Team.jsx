@@ -13,7 +13,7 @@ export default function Team({ members }) {
           Meet The Team
         </span>
         <h2 className="text-3xl sm:text-4xl font-bold mt-4">
-          The Creative Minds
+          This is Us
         </h2>
       </div>
 

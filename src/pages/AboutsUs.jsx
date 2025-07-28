@@ -36,41 +36,64 @@ export default function AboutUs() {
       <section className="relative bg-cover bg-center text-white px-8 py-24" style={{ backgroundImage: "url('//melo_films/assets/images/awards.png')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <div className="relative z-10">
-          <h1 className="text-5xl font-bold mt-4 font-playfair">About Us</h1>
-          <p className="text-lg pt-2 font-montserrat">Have a project in mind or interested in collaborating? We'd love to hear from you.</p>
+          <h1 className="text-5xl font-bold mt-4 font-playfair px-13">About Us</h1>
+          <p className="text-md pt-2 font-montserrat mt-2 px-13">Melo Films is a Mumbai and Delhi-based film production company with pan-India execution capabilities. We specialize in original content, commissioned productions, co-productions, and international line production. With a strong network of local crews and creative collaborators, we bring cinematic ideas to life across formats and geographies. From fiction to documentary, commercial to indie, Melo Films is driven by a passion for stories that resonate deeply and travel widely.</p>
         </div>
       </section>
       <OurStory content={aboutData.ourStory} />
       <section className="bg-black text-white px-6 sm:px-12 py-16 text-center">
-      {/* Section Header */}
-      <span className="text-yellow-500 border border-yellow-500 px-3 py-1 text-sm uppercase tracking-wider">
-        Our Vision
-      </span>
+  {/* Section Header */}
+  <span className="text-yellow-500 border border-yellow-500 px-3 py-1 text-sm uppercase tracking-wider">
+    Things we do
+  </span>
 
-      <h2 className="text-3xl sm:text-4xl font-bold mt-4">
-        Creating Cinema That Matters
-      </h2>
-
-      {/* Vision Statement */}
-      <p className="text-gray-300 mt-6 max-w-3xl mx-auto leading-relaxed">
-        "We don't just make films; we craft experiences that challenge, inspire, and transform.
-        Our vision is to push the boundaries of storytelling while maintaining the highest standards of cinematic excellence."
+  {/* Grid container for the services */}
+  <div className="mt-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    
+    {/* Column 1: Originals */}
+    <div>
+      <h3 className="text-yellow-500 font-bold text-2xl mb-4">Originals</h3>
+      <p className="text-gray-300 text-sm leading-relaxed">
+        We strive to strengthen creative voices through honest, personal storytelling. Every original we produce – and those in the pipeline – is guided by our enduring love for cinema and the craft that makes it magical.
       </p>
+    </div>
 
-      {/* Signature/Logo Image */}
-      <div className="mt-8">
-        <img
-          src="/assets/images/signature.png" // Adjust path based on your setup
-          alt="Signature"
-          className="mx-auto w-[220px] h-[64px] object-contain"
-        />
-      </div>
-
-      {/* Author */}
-      <p className="mt-4 text-yellow-500 font-medium">
-        Michael Reeves, Founder & Creative Director
+    {/* Column 2: Impact Films */}
+    <div>
+      <h3 className="text-yellow-500 font-bold text-2xl mb-4">Impact Films</h3>
+      <p className="text-gray-300 text-sm leading-relaxed">
+        As conscious creators, we use our craft to support causes that matter. Over the years, we've partnered with esteemed organizations such as UNHCR, Oxfam, Save the Children, WaterAid, and several state bodies to amplify their impact-driven initiatives.
       </p>
-    </section>
+    </div>
+
+    {/* Column 3: Brand Stories */}
+    <div>
+      <h3 className="text-yellow-500 font-bold text-2xl mb-4">Brand Stories</h3>
+      <p className="text-gray-300 text-sm leading-relaxed">
+        Every brand has a story. And as filmmakers, we're built to tell it. We help brands shape their voice, build emotional resonance, and craft powerful outreach strategies through authentic, cinematic storytelling.
+      </p>
+    </div>
+
+    {/* Column 4: Line Production */}
+    <div>
+      <h3 className="text-yellow-500 font-bold text-2xl mb-4">Line Production</h3>
+      <p className="text-gray-300 text-sm leading-relaxed">
+        With offices in Mumbai and Delhi and a strong nationwide network, we support global and domestic productions with seamless execution. Clients like Bloomberg News (NY), Whisper TV (UK), Honto (NY), and Acumen (NY) have trusted us to deliver on time – every time.
+      </p>
+    </div>
+
+    {/* Column 5: Co-Pro and Festival Distribution */}
+    <div>
+      <h3 className="text-yellow-500 font-bold text-2xl mb-4">Co-Pro and Festival Distribution</h3>
+      <p className="text-gray-300 text-sm leading-relaxed">
+        We collaborate with Indian and international filmmakers on co-productions, offering creative and logistical support. From budgeting and permits to festival submissions and outreach, we help stories travel – from script to screen.
+      </p>
+    </div>
+
+  </div>
+</section>
+      
+   
       {aboutData.team?.length > 0 && <Team members={aboutData.team} />}
       {aboutData.clients?.length > 0 && <Clients clients={aboutData.clients} />}
       {aboutData.festivals?.length > 0 && <Festivals festivals={aboutData.festivals} />}

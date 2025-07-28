@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-black text-white px-10 flex items-center justify-between relative z-50">
+      <nav className="bg-black text-white px-15 flex items-center justify-between relative z-50">
         {/* Left Side: Logo */}
         <div className="flex-1">
   <Link to="/">
@@ -44,7 +44,7 @@ const Header = () => {
 
 
         {/* Center: Desktop Navigation Links */}
-        <ul className="hidden md:flex md:space-x-8 text-md">
+        <ul className="hidden md:flex md:space-x-8 text-sm">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link

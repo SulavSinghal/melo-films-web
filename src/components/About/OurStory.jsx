@@ -5,7 +5,7 @@ export default function OurStory({ content }) {
 
   return (
     <section className="bg-[#0f0f0f] text-white px-8 sm:px-16 py-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Text Section */}
         <div>
@@ -17,11 +17,11 @@ export default function OurStory({ content }) {
             {content.heading} 
           </h2>
 
-          <p className="text-gray-300 mt-6 leading-relaxed">
+          <p className="text-gray-300 mt-6 leading-relaxed text-sm">
             {content.paragraph1}
           </p> 
 
-          <p className="text-gray-300 mt-4 leading-relaxed">
+          <p className="text-gray-300 mt-4 leading-relaxed text-sm">
             {content.paragraph2}
           </p>
 
