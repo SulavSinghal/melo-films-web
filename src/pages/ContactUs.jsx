@@ -52,7 +52,6 @@ export default function ContactPage() {
         <div className="relative z-10">
           <a href="#" className="inline-block border border-yellow-500 text-yellow-500 px-4 py-2 rounded hover:bg-yellow-500 hover:text-black text-sm">Get in touch</a>
           <h1 className="text-5xl font-bold mt-4 font-playfair">Contact Us</h1>
-          <p className="text-lg pt-2 font-montserrat">Have a project in mind or interested in collaborating? We'd love to hear from you.</p>
         </div>
       </section>
 
@@ -81,8 +80,6 @@ export default function ContactPage() {
               <InfoRow icon={<FaMapMarkerAlt />} label="Studio Address" value={contactInfo.studio_address} />
               <InfoRow icon={<FaPhoneAlt />} label="Phone" value={contactInfo.phone} />
               <InfoRow icon={<FaEnvelope />} label="Email" value={contactInfo.email} />
-              <InfoRow icon={<FaClock />} label="Working Hours" value={contactInfo.working_hours} />
-
               <div className="mt-8">
                 <h4 className="font-semibold text-white mb-2">Connect With Us</h4>
                 <div className="flex space-x-4 text-white text-xl">
