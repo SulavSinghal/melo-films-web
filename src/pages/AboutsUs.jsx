@@ -95,7 +95,7 @@ export default function AboutUs() {
       
    
       {aboutData.team?.length > 0 && <Team members={aboutData.team} />}
-      {aboutData.clients?.length > 0 && <Clients clients={aboutData.clients} />}
+      <Clients />
       {aboutData.festivals?.length > 0 && <Festivals festivals={aboutData.festivals} />}
       {aboutData.awards?.length > 0 && <Awards awards={aboutData.awards} />}
       <CTA />
