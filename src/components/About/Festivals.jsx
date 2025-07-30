@@ -7,7 +7,7 @@ export default function Festivals({ festivals }) {
     <section className="bg-[#0f0f0f] text-white py-16 px-6 md:px-20">
       {/* Subtitle */}
       <div className="text-center mb-4">
-        <span className="text-xs uppercase tracking-widest border border-yellow-500 text-yellow-500 px-3 py-1 rounded">
+        <span className="text-xs uppercase tracking-widest border border-yellow-500 text-[#D4AF37] px-3 py-1 rounded">
           Festival Participation
         </span>
       </div>

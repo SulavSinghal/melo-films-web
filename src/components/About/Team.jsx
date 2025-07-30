@@ -9,7 +9,7 @@ export default function Team({ members }) {
     <section className="bg-[#0f0f0f] text-white px-6 sm:px-12 py-16">
       {/* Section Header */}
       <div className="text-center mb-12">
-        <span className="text-yellow-500 border border-yellow-500 px-3 py-1 text-sm uppercase tracking-wider">
+        <span className="text-[#D4AF37] border border-yellow-500 px-3 py-1 text-sm uppercase tracking-wider">
           Meet The Team
         </span>
         <h2 className="text-3xl sm:text-4xl font-bold mt-4">
@@ -44,7 +44,7 @@ export default function Team({ members }) {
                 className="w-full h-60 object-cover rounded mb-4"
               />
               <h3 className="text-lg font-semibold">{member.name}</h3>
-              <p className="text-yellow-500 text-sm mb-1">{member.role}</p>
+              <p className="text-[#D4AF37] text-sm mb-1">{member.role}</p>
               <p className="text-sm text-gray-300">{member.description}</p>
             </div>
           ))}

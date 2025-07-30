@@ -12,7 +12,7 @@ export default function CTA() {
       </p>
       <Link
         to="/contact"
-        className="inline-block border border-yellow-500 text-yellow-500 px-8 py-3 rounded hover:bg-yellow-500 hover:text-black transition duration-300"
+        className="inline-block border border-yellow-500 text-[#D4AF37] px-8 py-3 rounded hover:bg-yellow-500 hover:text-black transition duration-300"
       >
         Contact Us
       </Link>

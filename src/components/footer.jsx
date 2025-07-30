@@ -23,10 +23,11 @@ const Footer = () => {
           <div className="min-w-[200px]">
             <h3 className=" mb-2">Mumbai</h3>
             <ul className="space-y-1 text-[#9CA3AF]">
-              <li>WeWork NESCO IT Park, 10th Floor</li>
-              <li>Building 4, Western Express Highway</li>
-              <li>Goregaon (East), Mumbai, Maharashtra</li>
-              <li>400063</li>
+              <li>Workafella AK Estate,</li> 
+              <li>Off Veer Savarkar Flyover</li>
+              <li>Besides Radisson Blu Hotel,SV Road</li>
+              <li>Goregaon West, Mumbai, Maharashtra</li>
+              <li>400062</li>
             </ul>
           </div>
 
